@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neumorphic UI Kit Demo</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      transition: background 0.3s;
+    }
+    .dark-theme body {
+      background: #1a1a1a;
+    }
+    .container {
+      text-align: center;
+      padding: 2rem;
+    }
+    .neumo-card {
+      background: #e0e0e0;
+      border-radius: 50px;
+      box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+      padding: 2rem;
+      margin: 1rem;
+      display: inline-block;
+      transition: 0.2s;
+    }
+    .dark-theme .neumo-card {
+      background: #2a2a2a;
+      box-shadow: 20px 20px 60px #1a1a1a, -20px -20px 60px #3a3a3a;
+      color: white;
+    }
+    .neumo-card:active {
+      box-shadow: inset 20px 20px 60px #bebebe, inset -20px -20px 60px #ffffff;
+    }
+    a {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #0066cc;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="neumo-card">
+      <h2>Neumorphic Button</h2>
+      <button class="neumo-card" style="padding: 12px 24px; border: none; cursor: pointer;">Click Me</button>
+    </div>
+    <br>
+    <a href="/demos/neumo-kit/../demo.html">← Back to Demos</a>
+  </div>
+  <script>
+    // Optional: simulate dark mode toggle for consistency
+    if (window.parent && window.parent.document.documentElement.classList.contains('dark-theme')) {
+      document.body.classList.add('dark-theme');
+    }
+  </script>
+</body>
+</html>

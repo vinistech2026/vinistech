@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Blog – VinisTech Insights & Updates</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body>
+
+<div id="chatbotContainer"></div>
+{{HEADER}}
+
+<main>
+  <section class="hero glass-card scroll-fade">
+    <div class="hero-overlay"></div>
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>Insights & <span class="highlight">Updates</span></h1>
+        <p>Stories, trends, and deep dives from the VinisTech team.</p>
+        <div class="hero-buttons">
+          <a href="#blogGrid" class="btn-primary">Read Articles</a>
+          <a href="contact.html" class="btn-outline">Subscribe</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span>3+</span> Articles</div>
+        <div class="stat"><span>Monthly</span> Updates</div>
+        <div class="stat"><span>Free</span> Resources</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured-demos" id="blogGrid">
+    <div class="container">
+      <h2>Latest from Our Blog</h2>
+      <div class="demo-grid" id="blogPostsContainer"></div>
+    </div>
+  </section>
+
+  <!-- Modal (same as before) -->
+  <div id="blogModal" class="modal" style="display: none;">
+    <div class="modal-content glass-card" style="max-width: 700px; max-height: 80vh; overflow-y: auto;">
+      <span id="modalCloseBtn" class="modal-close" style="float: right; cursor: pointer;">&times;</span>
+      <div id="blogModalContent"></div>
+    </div>
+  </div>
+</main>
+
+{{FOOTER}}
+<script src="js/global.js"></script>
+<script src="js/pages/blog.js"></script>
+</body>
+</html>

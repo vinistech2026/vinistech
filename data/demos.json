@@ -1,0 +1,56 @@
+[
+  {
+    "name": "3d Cube",
+    "description": "demo for VinisTech",
+    "icon": "🚀",
+    "url": "/demos/3d-cube/index.html"
+  },
+  {
+    "name": "Admission Chatbot",
+    "description": "demo for VinisTech",
+    "icon": "🚀",
+    "url": "/demos/admission-chatbot/index.html"
+  },
+  {
+    "name": "Art Marketplace",
+    "description": "demo for VinisTech",
+    "icon": "🚀",
+    "url": "/demos/art-marketplace/index.html"
+  },
+  {
+    "name": "Deshdarshan Demo",
+    "description": "demo for VinisTech",
+    "icon": "🚀",
+    "url": "/demos/deshdarshan-demo/index.html"
+  },
+  {
+    "name": "Hospital Appointment",
+    "description": "demo for VinisTech",
+    "icon": "🚀",
+    "url": "/demos/hospital-appointment/index.html"
+  },
+  {
+    "name": "Jyotish Demo",
+    "description": "demo for VinisTech",
+    "icon": "🚀",
+    "url": "/demos/jyotish-demo/index.html"
+  },
+  {
+    "name": "Neumo Kit",
+    "description": "demo for VinisTech",
+    "icon": "🚀",
+    "url": "/demos/neumo-kit/index.html"
+  },
+  {
+    "name": "Nursery Demo",
+    "description": "demo for VinisTech",
+    "icon": "🚀",
+    "url": "/demos/nursery-demo/index.html"
+  },
+  {
+    "name": "Real Estate Demo",
+    "description": "demo for VinisTech",
+    "icon": "🚀",
+    "url": "/demos/real-estate-demo/index.html"
+  }
+]

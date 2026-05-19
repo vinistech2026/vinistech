@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Demos – VinisTech Interactive Showcase</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body>
+
+<div id="chatbotContainer"></div>
+{{HEADER}}
+
+<main>
+  <!-- Hero -->
+  <section class="hero glass-card scroll-fade">
+    <div class="hero-overlay"></div>
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>Interactive <span class="highlight">Demos</span></h1>
+        <p>Explore fully functional prototypes built with glassmorphism, neumorphism, and 2026 UI trends.</p>
+        <div class="hero-buttons">
+          <a href="#demoGrid" class="btn-primary">Browse All Demos</a>
+          <a href="contact.html" class="btn-outline">Request a Custom Demo</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span>6</span> Live Demos</div>
+        <div class="stat"><span>5+</span> Coming Soon</div>
+        <div class="stat"><span>All</span> Responsive</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured-demos" id="demoGrid">
+    <div class="container">
+      <h2>Our Demo Showcase</h2>
+      <div class="demo-grid" id="demoPostsContainer"></div>
+    </div>
+  </section>
+</main>
+
+{{FOOTER}}
+<script src="js/global.js"></script>
+<script src="js/pages/demo.js"></script>
+</body>
+</html>

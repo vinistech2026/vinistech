@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>WhatsApp Link Generator – VinisTech Tools</title>
+  <link href="../../css/style.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../assets/logo.png">
+  <style>
+    /* Additional tool-specific styles if needed */
+    .tool-container { max-width: 500px; margin: 2rem auto; text-align: center; }
+    .tool-input { width: 100%; padding: 0.8rem; margin: 0.5rem 0; border-radius: 40px; border: 1px solid var(--glass-border); background: var(--bg-secondary); }
+    .result-area { margin-top: 1rem; word-break: break-all; }
+  </style>
+</head>
+<body>
+
+<!-- Simplified header for tool page (can reuse main header or minimal) -->
+<header class="glass-header" style="justify-content: center;">
+  <a href="../../index.html" class="logo-link"><div class="logo"><img src="../../assets/logo.png" class="logo-icon" onerror="this.src='https://placehold.co/40x40?text=VT'"><span>Vinis<span class="highlight">Tech</span></span></div></a>
+</header>
+
+<div class="tool-container glass-card" style="padding: 2rem;">
+  <h1>💬 WhatsApp Link Generator</h1>
+  <p>Enter a phone number (with country code, e.g., 919876543210) to generate a WhatsApp link.</p>
+  <input type="text" id="phoneNumber" class="tool-input" placeholder="e.g., 919876543210">
+  <button id="generateBtn" class="btn-primary">Generate Link</button>
+  <div id="result" class="result-area"></div>
+  <div style="margin-top: 2rem;">
+    <a href="../../tools.html" class="btn-outline">← Back to Tools</a>
+  </div>
+</div>
+
+<footer class="glass-footer" style="margin-top: 3rem;"><div class="footer-bottom"><p>© 2026 VinisTech.in – Free utility</p></div></footer>
+
+<script src="../../js/script.js"></script>
+<script>
+  const generateBtn = document.getElementById('generateBtn');
+  const phoneInput = document.getElementById('phoneNumber');
+  const resultDiv = document.getElementById('result');
+  generateBtn.addEventListener('click', () => {
+    let phone = phoneInput.value.trim();
+    if (!phone) {
+      resultDiv.innerHTML = '<span style="color:#ef4444;">Please enter a phone number.</span>';
+      return;
+    }
+    phone = phone.replace(/[^0-9]/g, '');
+    if (phone.length < 10) {
+      resultDiv.innerHTML = '<span style="color:#ef4444;">Enter at least 10 digits.</span>';
+      return;
+    }
+    const waLink = `https://wa.me/${phone}`;
+    resultDiv.innerHTML = `<a href="${waLink}" target="_blank" style="color: var(--accent);">${waLink}</a> <button id="copyLink" style="background:none; border:none; cursor:pointer;">📋 Copy</button>`;
+    const copyBtn = document.getElementById('copyLink');
+    if (copyBtn) copyBtn.addEventListener('click', () => { navigator.clipboard.writeText(waLink); alert('Link copied!'); });
+  });
+</script>
+</body>
+</html>

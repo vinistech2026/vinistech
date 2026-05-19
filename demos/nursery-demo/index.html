@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>GreenNursery – India's Most Trusted Online Plant Nursery</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/demos/nursery-demo/style.css">
+  <link rel="icon" type="image/png" href="/demos/nursery-demo/assets/logo.png">
+</head>
+<body>
+
+  <!-- TICKER / ANNOUNCEMENT BAR -->
+  <div class="ticker">
+    <div class="ticker-content">
+      <span>🌿 Free Shipping on orders above ₹499</span>
+      <span>🎁 Free Air Purifying Plant on orders above ₹999</span>
+      <span>💚 1 Million+ Happy Plant Parents</span>
+      <span>🚚 Delivery in 4-6 days</span>
+      <span>⭐ 4.8 Rating on Google</span>
+    </div>
+  </div>
+
+  <header class="glass-header">
+    <div class="logo">
+      <a href="/demos/nursery-demo/index.html">
+        <img src="/demos/nursery-demo/assets/logo.png" alt="GreenNursery Logo" class="logo-img" onerror="this.src='https://placehold.co/50x50?text=GN'">
+        <span>GreenNursery</span>
+      </a>
+    </div>
+
+    <nav class="desktop-nav">
+      <ul class="nav-links">
+        <li><a href="/demos/nursery-demo/index.html" class="active">Home</a></li>
+        <li><a href="#plants">Plants</a></li>
+        <li><a href="#essentials">Garden Essentials</a></li>
+        <li><a href="#gifts">Gift Hampers</a></li>
+        <li><a href="#care">Plant Care</a></li>
+        <li><a href="#offers">Offers</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-icons">
+      <button class="icon-btn search-toggle" id="searchToggle" aria-label="Search">
+        <i class="fas fa-search"></i>
+      </button>
+      <a href="/demos/nursery-demo/wishlist.html" class="icon-btn" id="wishlistIcon">
+        <i class="far fa-heart"></i>
+        <span class="badge" id="wishlistCount">0</span>
+      </a>
+      <button class="icon-btn cart-toggle" id="cartToggle" aria-label="Cart">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="badge" id="cartCount">0</span>
+      </button>
+    </div>
+
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Mobile Navigation Sidebar -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="mobile-nav-links">
+      <li><a href="/demos/nursery-demo/index.html">Home</a></li>
+      <li><a href="#plants">Plants</a></li>
+      <li><a href="#essentials">Garden Essentials</a></li>
+      <li><a href="#gifts">Gift Hampers</a></li>
+      <li><a href="#care">Plant Care</a></li>
+      <li><a href="#offers">Offers</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="/demos/nursery-demo/wishlist.html">Wishlist</a></li>
+      <li><a href="/demos/nursery-demo/checkout.html">Checkout</a></li>
+    </ul>
+  </div>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search for plants, pots, fertilizers...">
+      <button id="closeSearch"><i class="fas fa-times"></i></button>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Carousel -->
+    <section class="hero">
+      <div class="hero-carousel" id="heroCarousel">
+        <div class="hero-slide active" style="background-image: url('/demos/nursery-demo/assets/hero-bg.png'); background-size: cover; background-position: center;">
+          <div class="hero-content">
+            <h1>Bring Nature Home</h1>
+            <p>Premium plants, pots, and gardening essentials delivered to your doorstep across India.</p>
+            <a href="#plants" class="btn-neumo">Shop Now <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="hero-slide" style="background-image: url('/demos/nursery-demo/assets/hero-bg2.png'); background-size: cover; background-position: center;">
+          <div class="hero-content">
+            <h1>Free Gift on Orders ₹999+</h1>
+            <p>Get a free air-purifying plant with every order above ₹999.</p>
+            <a href="#offers" class="btn-neumo">Explore Offers</a>
+          </div>
+        </div>
+        <div class="hero-slide" style="background-image: url('/demos/nursery-demo/assets/hero-bg3.png'); background-size: cover; background-position: center;">
+          <div class="hero-content">
+            <h1>Eco-Friendly Gift Hampers</h1>
+            <p>Perfect for housewarming, birthdays, and festivals. Shop now!</p>
+            <a href="#gifts" class="btn-neumo">Shop Hampers</a>
+          </div>
+        </div>
+        <button class="carousel-prev" id="carouselPrev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-next" id="carouselNext" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="trust-badges">
+      <div class="trust-item"><i class="fas fa-shipping-fast"></i><span>Free Shipping on ₹499+</span></div>
+      <div class="trust-item"><i class="fas fa-leaf"></i><span>1M+ Happy Plant Parents</span></div>
+      <div class="trust-item"><i class="fas fa-truck"></i><span>Delivery in 4-6 Days</span></div>
+      <div class="trust-item"><i class="fas fa-hand-holding-heart"></i><span>100% Safe Delivery</span></div>
+      <div class="trust-item"><i class="fas fa-user-graduate"></i><span>Plant Expert Support</span></div>
+    </section>
+
+    <!-- Filter Tabs (Indoor/Outdoor/Vastu/Air Purifying) -->
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="all">All Plants</button>
+      <button class="filter-btn" data-filter="indoor">Indoor Plants</button>
+      <button class="filter-btn" data-filter="outdoor">Outdoor Plants</button>
+      <button class="filter-btn" data-filter="vastu">Vastu Plants</button>
+      <button class="filter-btn" data-filter="airpurifying">Air Purifying</button>
+      <button class="filter-btn" data-filter="succulents">Succulents</button>
+    </div>
+
+    <!-- Trending Now Section -->
+    <section class="product-section" id="trending">
+      <div class="section-header"><h2>🔥 Trending Now</h2><a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a></div>
+      <div class="product-grid" id="trendingGrid"></div>
+    </section>
+
+    <!-- Best Sellers Section -->
+    <section class="product-section" id="plants">
+      <div class="section-header"><h2>🌿 Best Sellers</h2><a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a></div>
+      <div class="product-grid" id="bestsellerGrid"></div>
+    </section>
+
+    <!-- Garden Essentials -->
+    <section class="product-section" id="essentials">
+      <div class="section-header"><h2>🛠️ Garden Essentials</h2><a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a></div>
+      <div class="product-grid" id="essentialsGrid"></div>
+    </section>
+
+    <!-- Gift Hampers -->
+    <section class="product-section" id="gifts">
+      <div class="section-header"><h2>🎁 Eco-Friendly Gift Hampers</h2><a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a></div>
+      <div class="product-grid" id="giftsGrid"></div>
+    </section>
+
+    <!-- Offer Banner -->
+    <section class="offer-banner" id="offers">
+      <div class="offer-content">
+        <h2>Limited Time Offer!</h2>
+        <p>Buy any 2 plants and get 10% off + a free packet of organic seeds</p>
+        <a href="#plants" class="btn-neumo">Shop Now</a>
+      </div>
+    </section>
+
+    <!-- Plant Care Tips -->
+    <section class="care-tips" id="care">
+      <h2>🌱 Expert Plant Care Tips</h2>
+      <div class="tips-grid">
+        <div class="tip-card"><img src="/demos/nursery-demo/assets/care-watering.png" alt="Watering" onerror="this.src='https://placehold.co/100x100?text=💧'"><h3>Watering Guide</h3><p>Most indoor plants need watering once a week.</p><a href="#">Read More →</a></div>
+        <div class="tip-card"><img src="/demos/nursery-demo/assets/care-light.png" alt="Light" onerror="this.src='https://placehold.co/100x100?text=☀️'"><h3>Light Requirements</h3><p>Snake plants thrive in low light, succulents need bright indirect sunlight.</p><a href="#">Read More →</a></div>
+        <div class="tip-card"><img src="/demos/nursery-demo/assets/care-fertilizer.png" alt="Fertilizer" onerror="this.src='https://placehold.co/100x100?text=🌿'"><h3>Fertilizer Schedule</h3><p>Use organic fertilizer once a month during growing season.</p><a href="#">Read More →</a></div>
+        <div class="tip-card"><img src="/demos/nursery-demo/assets/care-pruning.png" alt="Pruning" onerror="this.src='https://placehold.co/100x100?text=✂️'"><h3>Pruning & Maintenance</h3><p>Remove yellow leaves to encourage healthy growth.</p><a href="#">Read More →</a></div>
+      </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section class="reviews" id="reviews">
+      <h2>⭐ What Our Plant Parents Say</h2>
+      <div class="reviews-slider">
+        <div class="review-card"><div class="stars">★★★★★</div><p>"The plants arrived in perfect condition! Highly recommend."</p><h4>- Priya S., Bengaluru</h4></div>
+        <div class="review-card"><div class="stars">★★★★★</div><p>"Amazing quality and customer support. My Monstera is thriving!"</p><h4>- Rajesh K., Mumbai</h4></div>
+        <div class="review-card"><div class="stars">★★★★☆</div><p>"Good variety of plants. Delivery took a bit longer but plants were healthy."</p><h4>- Anjali M., Delhi</h4></div>
+        <div class="review-card"><div class="stars">★★★★★</div><p>"Best online nursery in India! Love their eco-friendly packaging."</p><h4>- Vikram S., Pune</h4></div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="newsletter-content">
+        <h2>🌿 Get 15% Off Your First Order</h2>
+        <p>Subscribe for exclusive offers, plant care tips, and new arrivals.</p>
+        <button id="openNewsletterModal" class="btn-neumo"><i class="fas fa-gift"></i> Subscribe Now</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Newsletter Modal (Hidden by default) -->
+  <div id="newsletterModal" class="modal">
+    <div class="modal-content glass-card">
+      <span class="modal-close" aria-label="Close modal">&times;</span>
+      <h2><i class="fas fa-envelope-open-text"></i> Get 15% Off!</h2>
+      <p>Subscribe to our newsletter and receive a <strong>15% discount coupon</strong> on your first order. Plus exclusive plant care tips.</p>
+      <form id="modalNewsletterForm">
+        <input type="text" id="modalName" placeholder="Your name" required>
+        <input type="email" id="modalEmail" placeholder="Your email address" required>
+        <button type="submit" class="btn-neumo">Claim Discount →</button>
+      </form>
+      <p class="small">No spam, unsubscribe anytime.</p>
+    </div>
+  </div>
+
+  <!-- Cart Sidebar -->
+  <div id="cartSidebar" class="cart-sidebar">
+    <div class="cart-header"><h3>Your Cart <span id="cartItemCount">(0 items)</span></h3><button id="closeCartBtn" class="close-cart">&times;</button></div>
+    <div id="cartItems" class="cart-items"><div class="empty-cart">Your cart is empty 🌱</div></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Subtotal:</span><span id="cartSubtotal">₹0</span></div>
+      <div class="cart-shipping"><span>Shipping:</span><span id="cartShipping">₹0</span></div>
+      <div class="cart-grandtotal"><span>Total:</span><span id="cartGrandTotal">₹0</span></div>
+      <div class="free-gift-note" id="freeGiftNote"></div>
+      <a href="/demos/nursery-demo/checkout.html" class="btn-neumo checkout-btn">Proceed to Checkout</a>
+    </div>
+  </div>
+  <div id="cartOverlay" class="cart-overlay"></div>
+  <div id="toast" class="toast"></div>
+
+  <footer class="glass-footer">
+    <div class="footer-content">
+      <div class="footer-col"><h3>GreenNursery</h3><p>India's most trusted online plant nursery.</p><div class="social-icons"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="#plants">Plants</a></li><li><a href="#essentials">Garden Essentials</a></li><li><a href="#gifts">Gift Hampers</a></li><li><a href="#care">Plant Care</a></li><li><a href="#offers">Offers</a></li></ul></div>
+      <div class="footer-col"><h4>Support</h4><ul><li><a href="#">Contact Us</a></li><li><a href="#">FAQs</a></li><li><a href="#">Shipping Policy</a></li><li><a href="#">Return Policy</a></li></ul></div>
+      <div class="footer-col"><h4>Contact Info</h4><p><i class="fas fa-phone"></i> +91 12345 67890</p><p><i class="fas fa-envelope"></i> care@greennursery.com</p><p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 GreenNursery – Part of VinisTech Demos. All rights reserved.</p><p><a href="/demos/nursery-demo/../demo.html">← Back to All Demos</a></p></div>
+  </footer>
+
+  <script src="/demos/nursery-demo/script.js"></script>
+</body>
+</html>

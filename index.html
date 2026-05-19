@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>VinisTech.in – Digital Innovation & AI Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body>
+
+<div id="chatbotContainer"></div>
+<!-- Top Banner -->
+<div class="top-banner" id="topBanner">
+  <span>✨ New demos added weekly – Explore our AI Agents, Real Estate & more ✨</span>
+  <button id="closeBanner" class="banner-close">&times;</button>
+</div>
+
+<header class="glass-header">
+  <a href="index.html" class="logo-link">
+    <div class="logo">
+      <img src="assets/logo.png" alt="VinisTech Logo" class="logo-icon" onerror="this.src='https://placehold.co/40x40?text=VT'">
+      <span>Vinis<span class="highlight">Tech</span></span>
+    </div>
+  </a>
+  <nav class="desktop-nav">
+    <ul>
+      <li class="dropdown mega-dropdown">
+        <a href="#">Services <i class="chevron">▼</i></a>
+        <div class="mega-menu">
+          <div class="mega-col"><h4>Digital Presence</h4><a href="services.html#web">Web Development</a><a href="services.html#ai">AI Solutions</a><a href="services.html#cloud">Cloud Consulting</a></div>
+          <div class="mega-col"><h4>Marketing & Growth</h4><a href="services.html#seo">SEO</a><a href="services.html#smo">Social Media</a><a href="services.html#ppc">PPC</a></div>
+          <div class="mega-col"><h4>Creative & Content</h4><a href="services.html#design">UI/UX Design</a><a href="services.html#content">Content Writing</a><a href="services.html#video">Video Production</a></div>
+        </div>
+      </li>
+      <li><a href="demo.html">Demos</a></li>
+      <li><a href="tools.html">Tools</a></li>
+      <li><a href="blog.html">Blogs</a></li>
+      <li class="dropdown">
+        <a href="#">Company <i class="chevron">▼</i></a>
+        <ul class="dropdown-menu">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div class="nav-actions">
+    <button id="themeToggle" class="theme-btn" aria-label="Dark mode">🌙</button>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">☰</button>
+    <a href="contact.html" class="btn-primary get-quote">Get Quote</a>
+  </div>
+</header>
+
+<!-- Mobile Navigation -->
+<div id="mobileNav" class="mobile-nav">
+  <ul>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="demo.html">Demos</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="blog.html">Blogs</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="careers.html">Careers</a></li>
+    <li><a href="contact.html" class="mobile-quote">Get Quote</a></li>
+  </ul>
+</div>
+
+<main>
+  <!-- Hero Section -->
+  <section class="hero glass-card scroll-fade">
+    <div class="hero-overlay"></div>
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>Innovate with <span class="highlight">VinisTech</span></h1>
+        <p>Glassmorphism • Bento Grid • Neumorphism • AI Agents • Future Ready</p>
+        <div class="hero-buttons">
+          <a href="services.html" class="btn-primary">Explore Services</a>
+          <a href="demo.html" class="btn-outline">View Demos →</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span>50+</span> Projects</div>
+        <div class="stat"><span>30+</span> Clients</div>
+        <div class="stat"><span>24/7</span> Support</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bento Services Grid -->
+  <section class="services-bento">
+    <div class="container">
+      <h2>What We Deliver</h2>
+      <div class="bento-grid">
+        <div class="bento-card large scroll-fade"><i class="icon">🤖</i><h3>AI Solutions</h3><p>Cutting-edge machine learning models, LLM integration, and intelligent automation for your business.</p></div>
+        <div class="bento-card scroll-fade"><i class="icon">🌐</i><h3>Web Development</h3><p>Modern, responsive websites with glassmorphism, neumorphism, and 2026 UI trends.</p></div>
+        <div class="bento-card tall scroll-fade"><i class="icon">📱</i><h3>Mobile Apps</h3><p>iOS & Android apps with smooth animations and intuitive UX.</p></div>
+        <div class="bento-card scroll-fade"><i class="icon">☁️</i><h3>Cloud Consulting</h3><p>Scale your infrastructure with AWS, Azure, and Google Cloud experts.</p></div>
+        <div class="bento-card scroll-fade"><i class="icon">📊</i><h3>Data Analytics</h3><p>Actionable insights from your data with AI-powered dashboards.</p></div>
+        <div class="bento-card scroll-fade"><i class="icon">🔒</i><h3>Cybersecurity</h3><p>Protect your digital assets with enterprise-grade security solutions.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Demos Section (links to demo.html) -->
+  <section class="featured-demos">
+    <div class="container">
+      <h2>Explore Our Demos</h2>
+      <div class="demo-grid">
+        <!-- Flip cards for 6 demos – same as before, but links point to demo.html -->
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><i class="icon">🌿</i><h3>Nursery E‑commerce</h3><p>Full‑featured plant shop with cart & wishlist</p></div>
+            <div class="flip-back"><a href="demos/nursery-demo/index.html" class="btn-primary">Launch Demo →</a></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><i class="icon">🎓</i><h3>Admission AI Chatbot</h3><p>Multilingual assistant for colleges</p></div>
+            <div class="flip-back"><a href="demos/admission-chatbot/index.html" class="btn-primary">Launch Demo →</a></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><i class="icon">🔮</i><h3>Jyotish Astrology</h3><p>Panchanga, Kundali, Muhurta</p></div>
+            <div class="flip-back"><a href="demos/jyotish-demo/index.html" class="btn-primary">Launch Demo →</a></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><i class="icon">🏥</i><h3>Hospital Scheduler</h3><p>Appointment booking & admin panel</p></div>
+            <div class="flip-back"><a href="demos/hospital-appointment/index.html" class="btn-primary">Launch Demo →</a></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><i class="icon">🏡</i><h3>Real Estate Portal</h3><p>Property listing, filters, wishlist</p></div>
+            <div class="flip-back"><a href="demos/real-estate-demo/index.html" class="btn-primary">Launch Demo →</a></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><i class="icon">🚀</i><h3>More Coming Soon</h3><p>Architects, Recruiters, AI Agents</p></div>
+            <div class="flip-back"><a href="demo.html" class="btn-primary">View All Demos →</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="glass-footer">
+  <div class="footer-content">
+    <div class="footer-col">
+      <h3>VinisTech</h3>
+      <p>Digital innovation & AI solutions for the modern era.</p>
+      <div class="social-icons">
+        <a href="#"><img src="assets/facebook.png" alt="Facebook" width="24" height="24" onerror="this.style.display='none'"></a>
+        <a href="#"><img src="assets/twitter.png" alt="Twitter" width="24" height="24" onerror="this.style.display='none'"></a>
+        <a href="#"><img src="assets/instagram.png" alt="Instagram" width="24" height="24" onerror="this.style.display='none'"></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="demo.html">Demos</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p><i class="icon">📞</i> +91 9711806644</p>
+      <p><i class="icon">✉️</i> info@vinistech.in</p>
+      <p><i class="icon">📍</i> Noida, Sector 12</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 VinisTech.in – All rights reserved.</p>
+  </div>
+</footer>
+<script src="js/global.js"></script>
+</body>
+</html>

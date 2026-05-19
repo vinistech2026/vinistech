@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>AdmitAI – Smart Admissions Assistant</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/demos/admission-chatbot/style.css">
+  <link rel="icon" type="image/png" href="/demos/admission-chatbot/assets/bot-avatar.png">
+</head>
+<body>
+
+<div class="app-container" style="background-image: url('/demos/admission-chatbot/assets/hero-bg.png'); background-size: cover; background-position: center; background-attachment: fixed;">
+  <div class="bg-overlay"></div>
+
+  <!-- Admin Modal -->
+  <div id="adminModal" class="modal">
+    <div class="modal-content glass-card">
+      <span class="modal-close" id="closeAdminModal">&times;</span>
+      <h3><i class="fas fa-users"></i> Admin Panel (Demo)</h3>
+      <div class="admin-tabs">
+        <button class="admin-tab active" data-tab="leads">Leads</button>
+        <button class="admin-tab" data-tab="callbacks">Callback Requests</button>
+      </div>
+      <div id="adminLeads" class="admin-table-container"></div>
+      <div id="adminCallbacks" class="admin-table-container" style="display: none;"></div>
+      <button id="clearAdminData" class="btn-outline" style="margin-top: 1rem;">Clear All Demo Data</button>
+    </div>
+  </div>
+
+  <!-- Floating Chat Button (mobile only) -->
+  <button class="floating-chat-btn" id="floatingChatBtn">
+    <i class="fas fa-comment-dots"></i>
+    <span class="notification-badge" id="notificationBadge">1</span>
+  </button>
+
+  <!-- Main Chat Dashboard -->
+  <div class="chat-dashboard" id="chatDashboard">
+    <!-- Sidebar -->
+    <div class="chat-sidebar glass-card">
+      <div class="sidebar-header">
+        <div class="bot-avatar-large"><img src="/demos/admission-chatbot/assets/bot-avatar.png" alt="AdmitAI" onerror="this.src='https://placehold.co/60x60?text=AI'"></div>
+        <h3>AdmitAI Assistant</h3>
+        <p class="status"><span class="online-dot"></span> Online · 24/7</p>
+      </div>
+      <div class="conversation-history">
+        <div class="history-item active"><i class="fas fa-comment"></i><div><span class="history-title">Current Session</span><span class="history-time">Just now</span></div></div>
+        <div class="history-item"><i class="far fa-clock"></i><div><span class="history-title">Previous Chat</span><span class="history-time">Demo</span></div></div>
+      </div>
+      <div class="sidebar-footer"><button id="newChatBtn" class="new-chat-btn"><i class="fas fa-plus"></i> New Conversation</button></div>
+    </div>
+
+    <!-- Main Chat Area -->
+    <div class="chat-main glass-card">
+      <div class="chat-main-header">
+        <div class="header-info"><i class="fas fa-robot"></i><div><h4>AdmitAI</h4><p>Admissions Assistant · Typically replies instantly</p></div></div>
+        <div class="header-actions">
+          <button id="resetChatBtn" class="icon-btn" aria-label="Reset chat"><i class="fas fa-undo-alt"></i></button>
+          <div class="language-selector">
+            <button id="langEn" class="lang-option active">EN</button>
+            <button id="langHi" class="lang-option">HI</button>
+          </div>
+          <button id="slowModeToggle" class="icon-btn" aria-label="Slow internet mode"><i class="fas fa-tachometer-alt"></i></button>
+        </div>
+      </div>
+      <div class="chat-messages-container">
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="typing-indicator" id="typingIndicator" style="display: none;">
+          <div class="message bot"><div class="avatar"><img src="/demos/admission-chatbot/assets/bot-avatar.png" alt="Bot" onerror="this.src='https://placehold.co/30x30?text=AI'"></div><div class="bubble"><div class="typing-dots"><span></span><span></span><span></span></div></div></div>
+        </div>
+      </div>
+      <div class="suggestions-panel">
+        <div class="suggestions-header"><i class="fas fa-lightbulb"></i> Suggested questions</div>
+        <div class="suggestions-grid" id="suggestionsGrid"></div>
+      </div>
+      <div class="chat-input-area">
+        <div class="input-actions">
+          <button class="action-btn" id="whatsappHandoffBtn" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></button>
+          <button class="action-btn" id="humanHandoffBtn" aria-label="Talk to human"><i class="fas fa-headset"></i></button>
+        </div>
+        <input type="text" id="chatInput" placeholder="Ask me anything about admissions..." autocomplete="off">
+        <button id="sendBtn" class="send-btn"><i class="fas fa-paper-plane"></i></button>
+      </div>
+      <div class="chat-footer-note"><i class="fas fa-shield-alt"></i> AI‑generated responses · Verified by VinisTech</div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="chat-right-panel">
+      <div class="glass-card info-card">
+        <h3><i class="fas fa-graduation-cap"></i> Popular Programs</h3>
+        <div class="course-list">
+          <div class="course-row" data-course="cs"><img src="/demos/admission-chatbot/assets/course-cs.png" alt="CS" onerror="this.src='https://placehold.co/40x40?text=CS'"><div class="course-info"><span class="course-name">B.Tech Computer Science</span><span class="course-fee">₹8.5L · 4 years</span></div><button class="quick-ask" data-question="Tell me about B.Tech CSE admission">Ask</button></div>
+          <div class="course-row" data-course="mba"><img src="/demos/admission-chatbot/assets/course-mba.png" alt="MBA" onerror="this.src='https://placehold.co/40x40?text=MBA'"><div class="course-info"><span class="course-name">MBA</span><span class="course-fee">₹12L · 2 years</span></div><button class="quick-ask" data-question="Tell me about MBA admission">Ask</button></div>
+          <div class="course-row" data-course="design"><img src="/demos/admission-chatbot/assets/course-design.png" alt="Design" onerror="this.src='https://placehold.co/40x40?text=DES'"><div class="course-info"><span class="course-name">M.Des</span><span class="course-fee">₹9L · 2 years</span></div><button class="quick-ask" data-question="Tell me about M.Des program">Ask</button></div>
+        </div>
+      </div>
+
+      <div class="glass-card info-card">
+        <h3><i class="fas fa-check-circle"></i> Check Your Eligibility</h3>
+        <div class="eligibility-form">
+          <select id="eligibilityCourse"><option value="cs">B.Tech CSE</option><option value="mba">MBA</option><option value="design">M.Des</option></select>
+          <input type="number" id="eligibilityScore" placeholder="Enter percentage / CGPA" step="0.01">
+          <button id="checkEligibilityBtn" class="btn-neumo">Check Eligibility</button>
+        </div>
+        <div id="eligibilityResult" class="eligibility-result"></div>
+      </div>
+
+      <div class="glass-card info-card">
+        <h3><i class="fas fa-calendar-alt"></i> Schedule Counselling</h3>
+        <p>Talk to our admission expert for free guidance.</p>
+        <div class="appointment-form">
+          <input type="text" id="apptName" placeholder="Full Name">
+          <input type="email" id="apptEmail" placeholder="Email">
+          <input type="tel" id="apptPhone" placeholder="Phone Number">
+          <input type="text" id="apptCity" placeholder="City">
+          <select id="apptCourse"><option value="">Select Course Interest</option><option>B.Tech CSE</option><option>MBA</option><option>M.Des</option></select>
+          <textarea id="apptQuery" placeholder="Your question (optional)" rows="2"></textarea>
+          <button id="scheduleBtn" class="btn-neumo">Request Callback</button>
+        </div>
+      </div>
+
+      <div class="glass-card info-card">
+        <h3><i class="fas fa-envelope"></i> Get Updates</h3>
+        <p>Receive admission deadlines & scholarship alerts.</p>
+        <form id="leadForm"><input type="email" id="leadEmail" placeholder="Your email address" required><button type="submit" class="btn-outline">Subscribe</button></form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="glass-footer">
+    <p>© 2026 AdmitAI – Demo for VinisTech. Real-time AI assistance simulated.</p>
+    <p><a href="#" id="adminLink">Admin Panel</a> · <a href="/demos/admission-chatbot/../demo.html">← Back to All Demos</a></p>
+  </footer>
+</div>
+
+<script src="/demos/admission-chatbot/script.js"></script>
+</body>
+</html>

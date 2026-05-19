@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout – GreenNursery</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body>
+  <header class="glass-header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/logo.png" alt="GreenNursery Logo" class="logo-img" onerror="this.src='https://placehold.co/50x50?text=GN'">
+        <span>GreenNursery</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="checkout-main">
+    <h1>Checkout</h1>
+    <div class="checkout-container">
+      <!-- Delivery Form -->
+      <div class="checkout-form glass-card">
+        <h2>Delivery Information</h2>
+        <form id="checkoutForm">
+          <div class="form-row">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+          </div>
+          <div class="form-row">
+            <input type="tel" placeholder="Phone Number" required>
+            <input type="text" placeholder="Pin Code" required>
+          </div>
+          <textarea placeholder="Complete Address (House No., Street, Landmark)" rows="3" required></textarea>
+          <div class="form-row">
+            <select required>
+              <option value="">Select State</option>
+              <option>Maharashtra</option>
+              <option>Delhi</option>
+              <option>Karnataka</option>
+              <option>Tamil Nadu</option>
+              <option>West Bengal</option>
+            </select>
+            <select required>
+              <option value="">Select City</option>
+              <option>Mumbai</option>
+              <option>Pune</option>
+              <option>Bengaluru</option>
+              <option>Chennai</option>
+              <option>Kolkata</option>
+            </select>
+          </div>
+
+          <h2>Payment Method</h2>
+          <div class="payment-options">
+            <label><input type="radio" name="payment" value="cod" checked> Cash on Delivery</label>
+            <label><input type="radio" name="payment" value="card"> Credit/Debit Card</label>
+            <label><input type="radio" name="payment" value="upi"> UPI / QR Code</label>
+          </div>
+
+          <button type="submit" class="btn-neumo" aria-label="Place order">Place Order</button>
+        </form>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="order-summary glass-card">
+        <h2>Order Summary</h2>
+        <div id="checkoutItems"></div>
+        <div class="summary-totals">
+          <p>Subtotal: <span id="checkoutSubtotal">₹0</span></p>
+          <p>Shipping: <span id="checkoutShipping">₹0</span></p>
+          <p><strong>Total: <span id="checkoutTotal">₹0</span></strong></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="glass-footer">
+    <div class="footer-bottom">
+      <p>© 2026 GreenNursery – Part of VinisTech Demos. All rights reserved.</p>
+      <p><a href="../../demo.html">← Back to All Demos</a></p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

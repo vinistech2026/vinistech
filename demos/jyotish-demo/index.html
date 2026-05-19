@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>VedicPanchang – 2026 Hindu Almanac & Astrology</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="/demos/jyotish-demo/style.css">
+</head>
+<body>
+
+<header class="glass-header">
+  <div class="logo">
+    <img src="/demos/jyotish-demo/assets/om.png" alt="Om" class="logo-icon" onerror="this.src='https://placehold.co/40x40?text=🕉'">
+    <span>VedicPanchang</span>
+  </div>
+  <nav class="desktop-nav">
+    <ul>
+      <li><a href="#" data-tab="panchang" class="nav-link active">Panchang</a></li>
+      <li><a href="#" data-tab="calendar" class="nav-link">Calendar</a></li>
+      <li><a href="#" data-tab="muhurat" class="nav-link">Muhurat</a></li>
+      <li><a href="#" data-tab="vrat" class="nav-link">Vrat & Utsav</a></li>
+      <li><a href="#" data-tab="festivals" class="nav-link">Festivals</a></li>
+      <li><a href="#" data-tab="astrology" class="nav-link">Astrology</a></li>
+      <li><a href="#" data-tab="planetary" class="nav-link">Planetary</a></li>
+      <li><a href="#" data-tab="devotional" class="nav-link">Devotional</a></li>
+      <li><a href="#" data-tab="utilities" class="nav-link">Utilities</a></li>
+      <li><a href="#" data-tab="kundali" class="nav-link">Kundali</a></li>
+      <li><a href="#" class="nav-link">Mobile Apps</a></li>
+    </ul>
+  </nav>
+  <div class="nav-actions">
+    <button id="themeToggle" class="theme-btn" aria-label="Dark/Light mode"><i class="fas fa-moon"></i></button>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+  </div>
+</header>
+
+<div id="mobileNav" class="mobile-nav">
+  <ul>
+    <li><a href="#" data-tab="panchang">Panchang</a></li>
+    <li><a href="#" data-tab="calendar">Calendar</a></li>
+    <li><a href="#" data-tab="muhurat">Muhurat</a></li>
+    <li><a href="#" data-tab="vrat">Vrat & Utsav</a></li>
+    <li><a href="#" data-tab="festivals">Festivals</a></li>
+    <li><a href="#" data-tab="astrology">Astrology</a></li>
+    <li><a href="#" data-tab="planetary">Planetary</a></li>
+    <li><a href="#" data-tab="devotional">Devotional</a></li>
+    <li><a href="#" data-tab="utilities">Utilities</a></li>
+    <li><a href="#" data-tab="kundali">Kundali</a></li>
+    <li><a href="#">Mobile Apps</a></li>
+  </ul>
+</div>
+
+<main>
+  <!-- Hero Section -->
+  <section class="hero glass-card scroll-fade" id="home">
+    <div class="hero-text">
+      <h1>शुभ दिन <span id="dynamicGreeting"></span></h1>
+      <p>Today's Panchang – Accurate Vedic almanac for rituals, festivals & auspicious timings</p>
+    </div>
+    <div class="panchanga-widget">
+      <div class="widget-row">
+        <div class="widget-item"><i class="fas fa-sun"></i> Sunrise <strong id="sunrise">6:32 AM</strong></div>
+        <div class="widget-item"><i class="fas fa-moon"></i> Sunset <strong id="sunset">6:15 PM</strong></div>
+        <div class="widget-item"><i class="fas fa-calendar-alt"></i> Tithi <strong id="tithi">Dashami</strong></div>
+        <div class="widget-item"><i class="fas fa-star"></i> Nakshatra <strong id="nakshatra">Rohini</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="content-grid">
+    <!-- Main Tabs Container -->
+    <div class="main-tab-area glass-card">
+      <div class="tab-headers">
+        <button class="tab-btn active" data-tab="panchang">Panchang</button>
+        <button class="tab-btn" data-tab="calendar">Calendar</button>
+        <button class="tab-btn" data-tab="muhurat">Muhurat</button>
+        <button class="tab-btn" data-tab="vrat">Vrat & Utsav</button>
+        <button class="tab-btn" data-tab="festivals">Festivals</button>
+        <button class="tab-btn" data-tab="astrology">Astrology</button>
+        <button class="tab-btn" data-tab="planetary">Planetary</button>
+        <button class="tab-btn" data-tab="devotional">Devotional</button>
+        <button class="tab-btn" data-tab="utilities">Utilities</button>
+        <button class="tab-btn" data-tab="kundali">Kundali</button>
+      </div>
+      <div class="tab-contents">
+        <!-- Panchang Tab -->
+        <div id="panchang" class="tab-content active">
+          <h3>Complete Daily Panchang</h3>
+          <div class="panchang-details">
+            <div><i class="fas fa-sun"></i> Sunrise: <span id="detailSunrise">6:32 AM</span></div>
+            <div><i class="fas fa-moon"></i> Sunset: <span id="detailSunset">6:15 PM</span></div>
+            <div><i class="fas fa-moon"></i> Moonrise: <span id="moonrise">7:45 PM</span></div>
+            <div><i class="fas fa-cloud-moon"></i> Moonset: <span id="moonset">8:10 AM</span></div>
+            <div><i class="fas fa-calendar-week"></i> Tithi: <span id="detailTithi">Dashami</span></div>
+            <div><i class="fas fa-star-of-life"></i> Nakshatra: <span id="detailNakshatra">Rohini</span></div>
+            <div><i class="fas fa-yin-yang"></i> Yoga: <span id="yoga">Vishkumbha</span></div>
+            <div><i class="fas fa-water"></i> Karana: <span id="karana">Vanija</span></div>
+          </div>
+          <div class="regional-links">
+            <label>Regional Panchang: </label>
+            <select id="regionalSelect"><option>North Indian</option><option>South Indian</option><option>Gujarati</option><option>Bengali</option></select>
+            <button id="updatePanchangaBtn" class="small-btn">Update</button>
+          </div>
+        </div>
+
+        <!-- Calendar Tab -->
+        <div id="calendar" class="tab-content"><h3>Hindu Calendar 2026</h3><div class="card-grid"><div class="glass-card mini-card">Chaitra</div><div class="glass-card mini-card">Vaishakha</div><div class="glass-card mini-card">Jyaishtha</div><div class="glass-card mini-card">Ashadha</div><div class="glass-card mini-card">Shravana</div><div class="glass-card mini-card">Bhadrapada</div></div></div>
+
+        <!-- Muhurat Tab -->
+        <div id="muhurat" class="tab-content"><h3>Auspicious Timings</h3><div class="muhurat-cards"><div class="glass-card muhur-card"><i class="fas fa-hourglass-start"></i> Abhijit: 11:45-12:30</div><div class="glass-card muhur-card"><i class="fas fa-hourglass-half"></i> Amrit: 06:00-07:30</div><div class="glass-card muhur-card"><i class="fas fa-ban"></i> Rahu Kalam: 08:30-10:00</div><div class="glass-card muhur-card"><i class="fas fa-chart-line"></i> Vijaya: 14:15-15:00</div></div></div>
+
+        <!-- Vrat Tab -->
+        <div id="vrat" class="tab-content"><h3>Upcoming Vrats</h3><div class="festival-list"><div class="festival-card"><img src="/demos/jyotish-demo/assets/shiva.png" onerror="this.src='https://placehold.co/60x60?text=Shiva'"><div><strong>Maha Shivaratri</strong><span>Feb 26, 2026</span></div></div><div class="festival-card"><img src="/demos/jyotish-demo/assets/krishna.png" onerror="this.src='https://placehold.co/60x60?text=Krishna'"><div><strong>Janmashtami</strong><span>Aug 26, 2026</span></div></div><div class="festival-card"><img src="/demos/jyotish-demo/assets/ganesha.png" onerror="this.src='https://placehold.co/60x60?text=Ganesha'"><div><strong>Ganesh Chaturthi</strong><span>Sep 15, 2026</span></div></div></div></div>
+
+        <!-- Festivals Tab -->
+        <div id="festivals" class="tab-content"><h3>Major Festivals</h3><div class="festival-list"><div class="festival-card"><img src="/demos/jyotish-demo/assets/diwali-lamp.png" onerror="this.src='https://placehold.co/80x80?text=Diwali'"><div><strong>Diwali</strong><span>Nov 12, 2026</span></div></div><div class="festival-card"><img src="/demos/jyotish-demo/assets/rangoli.png" onerror="this.src='https://placehold.co/80x80?text=Holi'"><div><strong>Holi</strong><span>Mar 14, 2026</span></div></div><div class="festival-card"><img src="/demos/jyotish-demo/assets/om.png" onerror="this.src='https://placehold.co/80x80?text=Navratri'"><div><strong>Navratri</strong><span>Oct 7-15, 2026</span></div></div></div></div>
+
+        <!-- Astrology Tab -->
+        <div id="astrology" class="tab-content"><h3>Today's Rashifal</h3><div class="rashifal-grid" id="rashifalGrid"></div></div>
+
+        <!-- Planetary Tab -->
+        <div id="planetary" class="tab-content"><h3>Planetary Transits</h3><div class="planet-list" id="planetList"></div></div>
+
+        <!-- Devotional Tab -->
+        <div id="devotional" class="tab-content"><h3>Mantras & Aartis</h3><div class="devotional-cards"><div class="devotional-card"><i class="fas fa-pray"></i> Gayatri Mantra</div><div class="devotional-card"><i class="fas fa-pray"></i> Maha Mrityunjaya</div><div class="devotional-card"><i class="fas fa-pray"></i> Vishnu Sahasranama</div></div></div>
+
+        <!-- Utilities Tab -->
+        <div id="utilities" class="tab-content"><h3>Tools</h3><div class="utility-list"><div class="util-card"><i class="fas fa-calculator"></i> Sankalp Calculator</div><div class="util-card"><i class="fas fa-calendar-check"></i> Vrat Calendar</div><div class="util-card"><i class="fas fa-map-marker-alt"></i> Temple Locator</div></div></div>
+
+        <!-- Kundali Tab -->
+        <div id="kundali" class="tab-content">
+          <h3>Generate Kundali (Birth Chart)</h3>
+          <form id="kundaliForm">
+            <div class="form-row"><input type="text" id="kundaliName" placeholder="Name" required><input type="date" id="kundaliDob" required></div>
+            <div class="form-row"><input type="time" id="kundaliTob" placeholder="Time of Birth"><input type="text" id="kundaliPlace" placeholder="Birth Place"></div>
+            <button type="submit" class="btn-primary">Generate Chart</button>
+          </form>
+          <div id="kundaliResult"></div>
+          <div id="kundaliChart" class="kundali-grid" style="display: none;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar glass-card">
+      <h3><i class="fas fa-calendar-alt"></i> Upcoming Festivals</h3>
+      <div class="event-sidebar" id="eventSidebar"></div>
+      <div class="festival-img-placeholder"><img src="/demos/jyotish-demo/assets/swastik.png" alt="Swastik" onerror="this.src='https://placehold.co/300x120?text=Swastik'"><p>शुभ लाभ (Auspicious)</p></div>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-links"><a href="#">About</a><a href="#">Contact</a><a href="#">Careers</a><a href="#">FAQs</a><a href="#">Privacy</a></div>
+  <div class="footer-copyright"><p>© 2026 VedicPanchang – 2026 Edition</p><div class="live-clock"><i class="far fa-clock"></i> <span id="liveClock">--:--:--</span></div></div>
+</footer>
+
+<script src="/demos/jyotish-demo/script.js"></script>
+</body>
+</html>

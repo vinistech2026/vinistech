@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Why Glassmorphism is the Future of UI Design",
+    "excerpt": "Explore the rise of glassmorphism in 2026 – its benefits, implementation techniques, and why it beats neumorphism.",
+    "date": "May 15, 2026",
+    "category": "UI/UX",
+    "image": "assets/blog-uiux.png",
+    "fullContent": "<p>Glassmorphism has become the defining aesthetic of modern interfaces...</p><h3>Why It Works</h3>..."
+  },
+  {
+    "id": 2,
+    "title": "Top 10 AI Trends in 2026",
+    "excerpt": "From autonomous agents to real‑time analytics, AI is reshaping business.",
+    "date": "May 10, 2026",
+    "category": "AI",
+    "image": "assets/blog-ai.png",
+    "fullContent": "<p>Artificial intelligence is moving beyond chatbots...</p>"
+  },
+  {
+    "id": 3,
+    "title": "How to Choose a Digital Agency in 2026",
+    "excerpt": "What to look for when hiring a tech partner – transparency, demos, and modern design.",
+    "date": "May 5, 2026",
+    "category": "Business",
+    "image": "assets/blog-agency.png",
+    "fullContent": "<p>Choosing the right digital agency can be overwhelming...</p>"
+  }
+]

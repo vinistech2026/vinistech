@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Contact VinisTech – Get in Touch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body>
+
+<div id="chatbotContainer"></div>
+{{HEADER}}
+
+<main>
+  <!-- Hero -->
+  <section class="hero glass-card scroll-fade">
+    <div class="hero-overlay"></div>
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>Let’s <span class="highlight">Connect</span></h1>
+        <p>We’d love to hear from you. Whether you have a project in mind or just want to say hello, drop us a message.</p>
+        <div class="hero-buttons">
+          <a href="#contactForm" class="btn-primary">Send Message</a>
+          <a href="tel:+919711806644" class="btn-outline">Call Us Now</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span>24/7</span> Support</div>
+        <div class="stat"><span>30 min</span> Response</div>
+        <div class="stat"><span>100%</span> Satisfaction</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form & Info Bento -->
+  <section class="services-bento">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <div class="bento-grid">
+        <div class="bento-card large scroll-fade">
+          <i class="icon">📍</i>
+          <h3>Visit Us</h3>
+          <p>Noida, Sector 12<br>Uttar Pradesh, India – 201301</p>
+          <p><i class="icon">📞</i> +91 9711806644</p>
+          <p><i class="icon">✉️</i> info@vinistech.in</p>
+          <div class="social-icons" style="margin-top: 1rem;">
+            <a href="#"><img src="assets/facebook.png" width="24" height="24" onerror="this.style.display='none'"></a>
+            <a href="#"><img src="assets/twitter.png" width="24" height="24" onerror="this.style.display='none'"></a>
+            <a href="#"><img src="assets/instagram.png" width="24" height="24" onerror="this.style.display='none'"></a>
+          </div>
+        </div>
+        <div class="bento-card tall scroll-fade" id="contactForm">
+          <i class="icon">✉️</i>
+          <h3>Send a Message</h3>
+          <form id="contactFormElement" style="display: flex; flex-direction: column; gap: 0.8rem;">
+            <input type="text" id="contactName" placeholder="Full Name" required>
+            <input type="email" id="contactEmail" placeholder="Email" required>
+            <input type="tel" id="contactPhone" placeholder="Phone">
+            <select id="contactService">
+              <option value="">Select Service</option>
+              <option>Web Development</option>
+              <option>AI Solutions</option>
+              <option>Cloud Consulting</option>
+              <option>SEO / SMO / PPC</option>
+              <option>UI/UX Design</option>
+              <option>Other</option>
+            </select>
+            <textarea id="contactMessage" rows="4" placeholder="Your message..."></textarea>
+            <button type="submit" class="btn-primary">Send Message</button>
+          </form>
+          <div id="formStatus" style="margin-top: 0.5rem;"></div>
+        </div>
+        <div class="bento-card scroll-fade">
+          <i class="icon">🗺️</i>
+          <h3>Find Us</h3>
+          <div style="background: #e2e8f0; border-radius: 20px; height: 150px; display: flex; align-items: center; justify-content: center;">
+            📍 Map placeholder – Noida Sector 12
+          </div>
+        </div>
+        <div class="bento-card scroll-fade">
+          <i class="icon">⏰</i>
+          <h3>Business Hours</h3>
+          <p>Monday – Friday: 9:00 AM – 7:00 PM</p>
+          <p>Saturday: 10:00 AM – 4:00 PM</p>
+          <p>Sunday: Closed (Emergency support available)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+{{FOOTER}}
+<script src="js/global.js"></script>
+<script>
+  // Simple form submission handler (stores in localStorage)
+  document.getElementById('contactFormElement')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('contactName').value.trim();
+    const email = document.getElementById('contactEmail').value.trim();
+    if (!name || !email) {
+      document.getElementById('formStatus').innerHTML = '<span style="color:#ef4444;">Please fill name and email.</span>';
+      return;
+    }
+    let leads = JSON.parse(localStorage.getItem('vinistech_contact_leads')) || [];
+    leads.push({
+      name,
+      email,
+      phone: document.getElementById('contactPhone').value,
+      service: document.getElementById('contactService').value,
+      message: document.getElementById('contactMessage').value,
+      timestamp: new Date().toISOString()
+    });
+    localStorage.setItem('vinistech_contact_leads', JSON.stringify(leads));
+    document.getElementById('formStatus').innerHTML = '<span style="color:#10b981;">Message sent! We will contact you soon.</span>';
+    document.getElementById('contactFormElement').reset();
+    setTimeout(() => document.getElementById('formStatus').innerHTML = '', 3000);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Careers – VinisTech (Coming Soon)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body>
+
+<div id="chatbotContainer"></div>
+{{HEADER}}
+
+<main>
+  <!-- Hero -->
+  <section class="hero glass-card scroll-fade">
+    <div class="hero-overlay"></div>
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>Join the <span class="highlight">VinisTech</span> Team</h1>
+        <p>We're building the future of digital experiences. Come grow with us.</p>
+        <div class="hero-buttons">
+          <a href="contact.html" class="btn-primary">Get Notified</a>
+          <a href="index.html" class="btn-outline">Back to Home</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span>🚀</span> Coming Soon</div>
+        <div class="stat"><span>💼</span> Multiple Roles</div>
+        <div class="stat"><span>🏡</span> Remote Friendly</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coming Soon Message -->
+  <section class="services-bento">
+    <div class="container">
+      <div class="bento-card large scroll-fade" style="text-align: center; margin: 0 auto; max-width: 600px;">
+        <i class="icon">🔨</i>
+        <h2>Careers Page Under Construction</h2>
+        <p>We are currently preparing an exciting list of opportunities. If you'd like to be the first to know when we start hiring, leave your email below.</p>
+        <form id="careerNotifyForm" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; justify-content: center;">
+          <input type="email" id="notifyEmail" placeholder="Your email address" required style="flex: 1; max-width: 300px;">
+          <button type="submit" class="btn-primary">Notify Me</button>
+        </form>
+        <div id="notifyStatus" style="margin-top: 0.5rem;"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+{{FOOTER}}
+<script src="js/global.js"></script>
+<script>
+  document.getElementById('careerNotifyForm')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('notifyEmail').value.trim();
+    if (!email) return;
+    let subscribers = JSON.parse(localStorage.getItem('vinistech_career_notify')) || [];
+    subscribers.push({ email, timestamp: new Date().toISOString() });
+    localStorage.setItem('vinistech_career_notify', JSON.stringify(subscribers));
+    document.getElementById('notifyStatus').innerHTML = '<span style="color: #10b981;">Thank you! We will notify you when positions open.</span>';
+    document.getElementById('careerNotifyForm').reset();
+    setTimeout(() => document.getElementById('notifyStatus').innerHTML = '', 3000);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>About VinisTech – Digital Innovation & AI Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body>
+
+<div id="chatbotContainer"></div>
+<!-- Top Banner -->
+<div class="top-banner" id="topBanner">
+  <span>✨ New demos added weekly – Explore our AI Agents, Real Estate & more ✨</span>
+  <button id="closeBanner" class="banner-close">&times;</button>
+</div>
+
+<header class="glass-header">
+  <a href="index.html" class="logo-link">
+    <div class="logo">
+      <img src="assets/logo.png" alt="VinisTech Logo" class="logo-icon" onerror="this.src='https://placehold.co/40x40?text=VT'">
+      <span>Vinis<span class="highlight">Tech</span></span>
+    </div>
+  </a>
+  <nav class="desktop-nav">
+    <ul>
+      <li class="dropdown mega-dropdown">
+        <a href="#">Services <i class="chevron">▼</i></a>
+        <div class="mega-menu">
+          <div class="mega-col"><h4>Digital Presence</h4><a href="services.html#web">Web Development</a><a href="services.html#ai">AI Solutions</a><a href="services.html#cloud">Cloud Consulting</a></div>
+          <div class="mega-col"><h4>Marketing & Growth</h4><a href="services.html#seo">SEO</a><a href="services.html#smo">Social Media</a><a href="services.html#ppc">PPC</a></div>
+          <div class="mega-col"><h4>Creative & Content</h4><a href="services.html#design">UI/UX Design</a><a href="services.html#content">Content Writing</a><a href="services.html#video">Video Production</a></div>
+        </div>
+      </li>
+      <li><a href="demo.html">Demos</a></li>
+      <li><a href="tools.html">Tools</a></li>
+      <li><a href="blog.html">Blogs</a></li>
+      <li class="dropdown">
+        <a href="#">Company <i class="chevron">▼</i></a>
+        <ul class="dropdown-menu">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div class="nav-actions">
+    <button id="themeToggle" class="theme-btn" aria-label="Dark mode">🌙</button>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">☰</button>
+    <a href="contact.html" class="btn-primary get-quote">Get Quote</a>
+  </div>
+</header>
+
+<!-- Mobile Navigation -->
+<div id="mobileNav" class="mobile-nav">
+  <ul>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="demo.html">Demos</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="blog.html">Blogs</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="careers.html">Careers</a></li>
+    <li><a href="contact.html" class="mobile-quote">Get Quote</a></li>
+  </ul>
+</div>
+
+<main>
+  <!-- Hero Section -->
+  <section class="hero glass-card scroll-fade">
+    <div class="hero-overlay"></div>
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>About <span class="highlight">VinisTech</span></h1>
+        <p>We are a forward‑thinking technology company focused on delivering immersive digital experiences. Our designs blend glassmorphism, neumorphism, and responsive layouts to create future‑proof websites.</p>
+        <p>Founded in 2026, we push the boundaries of what's possible on the web.</p>
+        <div class="hero-buttons">
+          <a href="services.html" class="btn-primary">Explore Services</a>
+          <a href="contact.html" class="btn-outline">Contact Us</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span>10+</span> Years</div>
+        <div class="stat"><span>50+</span> Projects</div>
+        <div class="stat"><span>30+</span> Clients</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision Bento -->
+  <section class="services-bento">
+    <div class="container">
+      <h2>Our Mission & Vision</h2>
+      <div class="bento-grid">
+        <div class="bento-card large scroll-fade">
+          <i class="icon">🎯</i>
+          <h3>Mission</h3>
+          <p>To empower businesses with cutting‑edge digital solutions that drive growth, efficiency, and innovation, while ensuring every client feels like a partner.</p>
+        </div>
+        <div class="bento-card scroll-fade">
+          <i class="icon">👁️</i>
+          <h3>Vision</h3>
+          <p>To become India's most trusted digital innovation partner, known for transparent pricing, timely delivery, and transformative technology.</p>
+        </div>
+        <div class="bento-card scroll-fade">
+          <i class="icon">💡</i>
+          <h3>Core Values</h3>
+          <p>Integrity, innovation, customer‑centricity, and continuous learning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="featured-demos">
+    <div class="container">
+      <h2>Meet Our Leadership</h2>
+      <div class="demo-grid">
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><i class="icon">👨‍💼</i><h3>Founder & CEO</h3><p>Ankit Sharma</p><p>10+ years in tech, AI & web innovation</p></div>
+            <div class="flip-back"><p>Ex‑Google, led 50+ successful projects.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><i class="icon">👩‍💻</i><h3>CTO</h3><p>Priya Mehta</p><p>Full‑stack architect, AI specialist</p></div>
+            <div class="flip-back"><p>15+ years in software engineering.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><i class="icon">📈</i><h3>Head of Growth</h3><p>Rahul Verma</p><p>Digital marketing & strategy</p></div>
+            <div class="flip-back"><p>Scaled multiple brands to 7‑figure revenue.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="glass-footer">
+  <div class="footer-content">
+    <div class="footer-col">
+      <h3>VinisTech</h3>
+      <p>Digital innovation & AI solutions for the modern era.</p>
+      <div class="social-icons">
+        <a href="#"><img src="assets/facebook.png" alt="Facebook" width="24" height="24" onerror="this.style.display='none'"></a>
+        <a href="#"><img src="assets/twitter.png" alt="Twitter" width="24" height="24" onerror="this.style.display='none'"></a>
+        <a href="#"><img src="assets/instagram.png" alt="Instagram" width="24" height="24" onerror="this.style.display='none'"></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="demo.html">Demos</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p><i class="icon">📞</i> +91 9711806644</p>
+      <p><i class="icon">✉️</i> info@vinistech.in</p>
+      <p><i class="icon">📍</i> Noida, Sector 12</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 VinisTech.in – All rights reserved.</p>
+  </div>
+</footer>
+<script src="js/global.js"></script>
+</body>
+</html>

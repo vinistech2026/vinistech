@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>CareConnect – India's Most Trusted Hospital Network</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="/demos/hospital-appointment/style.css">
+  <link rel="icon" type="image/png" href="/demos/hospital-appointment/assets/logo.png">
+</head>
+<body>
+
+<!-- Campaign Banner -->
+<div id="campaignBanner" class="campaign-banner">
+  <div class="campaign-content"><i class="fas fa-gift"></i> Special Offer: 20% off on first consultation! Code <strong>CARE20</strong></div>
+  <button id="closeBanner" class="close-banner" aria-label="Close banner">&times;</button>
+</div>
+
+<!-- Header with Mega Menu -->
+<header class="glass-header">
+  <div class="logo">
+    <img src="/demos/hospital-appointment/assets/logo.png" class="logo-icon" alt="CareConnect Logo" onerror="this.src='https://placehold.co/40x40?text=🏥'">
+    <span>CareConnect</span>
+  </div>
+  <nav class="desktop-nav">
+    <ul>
+      <li class="dropdown mega-dropdown">
+        <a href="#">Hospitals <i class="fas fa-chevron-down"></i></a>
+        <div class="mega-menu">
+          <div class="mega-col"><h4>Delhi NCR</h4><a href="#">Saket</a><a href="#">Vaishali</a><a href="#">Patparganj</a></div>
+          <div class="mega-col"><h4>Mumbai</h4><a href="#">Nanavati Max</a><a href="#">Andheri</a></div>
+          <div class="mega-col"><h4>Bengaluru</h4><a href="#">Whitefield</a><a href="#">Hebbal</a></div>
+        </div>
+      </li>
+      <li class="dropdown mega-dropdown">
+        <a href="#">Specialities <i class="fas fa-chevron-down"></i></a>
+        <div class="mega-menu">
+          <div class="mega-col"><h4>Heart & Vascular</h4><a href="#">Cardiology</a><a href="#">Cardiac Surgery</a></div>
+          <div class="mega-col"><h4>Neuro Sciences</h4><a href="#">Neurology</a><a href="#">Neurosurgery</a></div>
+          <div class="mega-col"><h4>Cancer Care</h4><a href="#">Medical Oncology</a><a href="#">Radiation Oncology</a></div>
+        </div>
+      </li>
+      <li><a href="#" data-section="doctors">Doctors</a></li>
+      <li><a href="#" data-section="patient-stories">Patient Stories</a></li>
+      <li><a href="#" data-section="blogs">Blogs</a></li>
+      <li><a href="#" data-section="admin">Admin</a></li>
+    </ul>
+  </nav>
+  <div class="nav-actions">
+    <button id="themeToggle" class="theme-btn" aria-label="Dark mode toggle"><i class="fas fa-moon"></i></button>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    <a href="#" class="btn-primary appt-btn-nav" data-section="doctors">Book Appointment</a>
+  </div>
+</header>
+
+<!-- Mobile Navigation -->
+<div id="mobileNav" class="mobile-nav">
+  <ul>
+    <li><a href="#">Hospitals</a></li>
+    <li><a href="#">Specialities</a></li>
+    <li><a href="#" data-section="doctors">Doctors</a></li>
+    <li><a href="#" data-section="patient-stories">Stories</a></li>
+    <li><a href="#" data-section="blogs">Blogs</a></li>
+    <li><a href="#" data-section="admin">Admin</a></li>
+    <li><a href="#" class="btn-primary appt-btn-mobile" data-section="doctors">Book Appointment</a></li>
+  </ul>
+</div>
+
+<!-- Hero Section -->
+<section class="hero" id="homeSection">
+  <div class="hero-overlay"></div>
+  <div class="hero-container">
+    <div class="hero-text">
+      <h1>Expert Care,<br><span class="highlight">Right at Your Fingertips</span></h1>
+      <p>India's most trusted healthcare network with 50+ expert doctors, 24/7 emergency.</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn-primary book-now-btn" data-section="doctors">Book Appointment <i class="fas fa-arrow-right"></i></a>
+        <a href="#" class="btn-outline emergency-link"><i class="fas fa-ambulance"></i> Emergency 24/7</a>
+      </div>
+      <div class="hero-search">
+        <div class="search-wrapper">
+          <i class="fas fa-search"></i>
+          <input type="text" id="heroSearch" placeholder="Search for doctor, specialty...">
+        </div>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><i class="fas fa-user-md"></i> <span>50+</span> Experts</div>
+      <div class="stat"><i class="fas fa-smile"></i> <span>10k+</span> Happy Patients</div>
+      <div class="stat"><i class="fas fa-calendar-check"></i> <span>24/7</span> Booking</div>
+      <div class="stat"><i class="fas fa-trophy"></i> <span>NABH</span> Accredited</div>
+    </div>
+    <div class="trust-badges">
+      <span><i class="fas fa-shield-alt"></i> 100% Safe & Secure</span>
+      <span><i class="fas fa-clock"></i> Instant Confirmation</span>
+      <span><i class="fas fa-hand-holding-heart"></i> Free Follow‑up</span>
+    </div>
+  </div>
+</section>
+
+<!-- Specialities Section -->
+<section class="specialities-section" id="specialitiesSection">
+  <div class="container">
+    <h2>Our Specialities</h2>
+    <div class="specialities-grid" id="specialitiesGrid">
+      <div class="speciality-card" data-specialty="cardio"><img src="/demos/hospital-appointment/assets/speciality-cardio.png" alt="Cardiology" onerror="this.src='https://placehold.co/80x80?text=❤️'"><h3>Cardiology</h3><p>Heart & Vascular</p></div>
+      <div class="speciality-card" data-specialty="neuro"><img src="/demos/hospital-appointment/assets/speciality-neuro.png" alt="Neurology" onerror="this.src='https://placehold.co/80x80?text=🧠'"><h3>Neurology</h3><p>Brain & Spine</p></div>
+      <div class="speciality-card" data-specialty="ortho"><img src="/demos/hospital-appointment/assets/speciality-ortho.png" alt="Orthopedics" onerror="this.src='https://placehold.co/80x80?text=🦴'"><h3>Orthopedics</h3><p>Bone & Joint</p></div>
+      <div class="speciality-card" data-specialty="onco"><img src="/demos/hospital-appointment/assets/speciality-onco.png" alt="Oncology" onerror="this.src='https://placehold.co/80x80?text=🎗️'"><h3>Oncology</h3><p>Cancer Care</p></div>
+      <div class="speciality-card" data-specialty="gyno"><img src="/demos/hospital-appointment/assets/speciality-gyno.png" alt="Gynecology" onerror="this.src='https://placehold.co/80x80?text=👶'"><h3>Gynecology</h3><p>Women's Health</p></div>
+      <div class="speciality-card" data-specialty="pedia"><img src="/demos/hospital-appointment/assets/speciality-pedia.png" alt="Pediatrics" onerror="this.src='https://placehold.co/80x80?text=👧'"><h3>Pediatrics</h3><p>Child Care</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Specialty Modal -->
+<div id="specialtyModal" class="modal">
+  <div class="modal-content glass-card">
+    <span class="modal-close">&times;</span>
+    <div id="specialtyContent"></div>
+  </div>
+</div>
+
+<!-- Doctors Section -->
+<section id="doctorsSection" class="doctors-section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-stethoscope"></i> Our Specialist Doctors</h2>
+      <div class="emergency-badge"><i class="fas fa-phone-alt"></i> Emergency: +91 92688 80303</div>
+    </div>
+    <div class="doctors-layout">
+      <div class="filter-sidebar glass-card" id="filterSidebar">
+        <button class="filter-sidebar-toggle" id="filterToggleBtn"><i class="fas fa-filter"></i> Filters</button>
+        <div class="filter-content" id="filterContent">
+          <h4>Location</h4>
+          <select id="filterLocation"><option value="all">All</option><option>Delhi</option><option>Mumbai</option><option>Bengaluru</option></select>
+          <h4>Gender</h4>
+          <select id="filterGender"><option value="all">All</option><option>Male</option><option>Female</option></select>
+          <h4>Language</h4>
+          <select id="filterLanguage"><option value="all">All</option><option>English</option><option>Hindi</option></select>
+          <h4>Availability</h4>
+          <select id="filterAvailability"><option value="all">All</option><option>Today</option><option>Tomorrow</option></select>
+          <button id="resetFilters" class="btn-outline">Reset Filters</button>
+        </div>
+      </div>
+      <div class="doctors-main">
+        <div class="doctor-filters">
+          <button class="filter-btn active" data-specialty="all">All</button>
+          <button class="filter-btn" data-specialty="Cardiology">Cardiology</button>
+          <button class="filter-btn" data-specialty="Gynecology">Gynecology</button>
+          <button class="filter-btn" data-specialty="Pediatrics">Pediatrics</button>
+          <button class="filter-btn" data-specialty="Dermatology">Dermatology</button>
+          <button class="filter-btn" data-specialty="Orthopedics">Orthopedics</button>
+          <button class="filter-btn" data-specialty="Neurology">Neurology</button>
+        </div>
+        <div class="doctor-grid" id="doctorGrid"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Doctor Profile Modal -->
+<div id="doctorProfileModal" class="modal">
+  <div class="modal-content glass-card" style="max-width:700px">
+    <span class="modal-close">&times;</span>
+    <div id="doctorProfileContent"></div>
+  </div>
+</div>
+
+<!-- Patient Stories Section -->
+<section id="patientStoriesSection" class="testimonials-section" style="display:none">
+  <div class="container">
+    <h2>Real Patient Stories</h2>
+    <div class="story-filters">
+      <button class="story-filter active" data-category="all">All</button>
+      <button class="story-filter" data-category="cardio">Cardiology</button>
+      <button class="story-filter" data-category="neuro">Neurology</button>
+      <button class="story-filter" data-category="ortho">Orthopedics</button>
+    </div>
+    <div id="storiesGrid" class="testimonial-slider"></div>
+  </div>
+</section>
+
+<!-- Blogs Section -->
+<section id="blogsSection" class="blogs-section">
+  <div class="container">
+    <h2>Health Blogs & Updates</h2>
+    <div class="blog-grid" id="blogGrid"></div>
+  </div>
+</section>
+
+<!-- Hospital Locator -->
+<section id="hospitalLocatorSection" class="hospital-locator">
+  <div class="container">
+    <h2>Our Hospital Network</h2>
+    <div class="hospital-grid" id="hospitalGrid"></div>
+    <div id="dummyMap" class="dummy-map">
+      <i class="fas fa-map-marker-alt"></i> Interactive map placeholder – locations marked
+    </div>
+  </div>
+</section>
+
+<!-- International Patient Portal -->
+<section id="internationalSection" class="international-portal">
+  <div class="container">
+    <h2>International Patients</h2>
+    <div class="portal-steps">
+      <div class="step">
+        <h3>Visa Inquiry</h3>
+        <input type="text" id="visaCountry" placeholder="Your Country">
+        <button id="visaBtn" class="btn-outline">Check Requirements</button>
+        <div id="visaResult"></div>
+      </div>
+      <div class="step">
+        <h3>Cost Estimator</h3>
+        <select id="estimatorProcedure">
+          <option>Heart Bypass</option>
+          <option>Knee Replacement</option>
+          <option>Cancer Therapy</option>
+        </select>
+        <button id="estimateBtn" class="btn-outline">Get Estimate</button>
+        <div id="estimateResult"></div>
+      </div>
+      <div class="step">
+        <h3>Transport Coordination</h3>
+        <button id="transportBtn" class="btn-outline">Request Pickup</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Preventive Health Packages -->
+<section id="healthPackagesSection" class="packages-section">
+  <div class="container">
+    <h2>Preventive Health Checkups</h2>
+    <div class="packages-grid" id="packagesGrid"></div>
+    <div id="cartSummary" class="cart-summary">
+      <button id="viewCartBtn" class="btn-primary">View Cart (<span id="cartCount">0</span>)</button>
+    </div>
+  </div>
+</section>
+
+<!-- Homecare Section -->
+<section id="homecareSection" class="homecare-section">
+  <div class="container">
+    <h2>Care @ Home</h2>
+    <div class="homecare-tabs">
+      <button class="homecare-tab active" data-tab="nursing">Home Nursing</button>
+      <button class="homecare-tab" data-tab="pharmacy">Pharmacy</button>
+      <button class="homecare-tab" data-tab="lab">Lab at Home</button>
+    </div>
+    <div id="homecareContent" class="homecare-content"></div>
+  </div>
+</section>
+
+<!-- Insurance Matrix -->
+<section id="insuranceSection" class="insurance-section">
+  <div class="container">
+    <h2>Cashless Insurance Partners</h2>
+    <div class="insurance-grid" id="insuranceGrid"></div>
+    <div class="claim-simulator">
+      <h3>Claim Status Simulator</h3>
+      <input type="text" id="claimNumber" placeholder="Claim ID">
+      <button id="checkClaimBtn" class="btn-outline">Check Status</button>
+      <div id="claimResult"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Academics & Research -->
+<section id="academicsSection" class="academics-section">
+  <div class="container">
+    <h2>Academics & Research</h2>
+    <div class="academics-grid">
+      <div><h3>DNB Courses</h3><ul id="dnbList"></ul></div>
+      <div><h3>Clinical Trials</h3><ul id="trialsList"></ul></div>
+      <div><h3>Publications</h3><ul id="publicationsList"></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- Investor Relations -->
+<section id="investorSection" class="investor-section">
+  <div class="container">
+    <div class="investor-widget">
+      <h3>Investor Corner</h3>
+      <div class="stock-ticker">CareConnect Share: <span id="stockPrice">₹1,245.60</span> <span class="up">▲ 2.3%</span></div>
+      <a href="#" id="annualReportLink" class="btn-outline">Download Annual Report (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<!-- Advanced Technologies -->
+<section id="techSection" class="tech-section">
+  <div class="container">
+    <h2>Advanced Technologies</h2>
+    <div class="tech-grid" id="techGrid"></div>
+  </div>
+</section>
+
+<!-- Floating Action Tray -->
+<div class="floating-tray">
+  <a href="#" class="tray-icon" data-section="doctors"><i class="fas fa-calendar-check"></i><span>Book</span></a>
+  <a href="tel:+919268880303" class="tray-icon"><i class="fas fa-phone-alt"></i><span>Emergency</span></a>
+  <a href="#" class="tray-icon" id="teleconsultBtn"><i class="fas fa-video"></i><span>Teleconsult</span></a>
+</div>
+
+<!-- My Appointments Section -->
+<section id="appointmentsSection" class="appointments-section" style="display:none">
+  <div class="container">
+    <h2>My Appointments</h2>
+    <div id="appointmentsList" class="appointments-list"></div>
+  </div>
+</section>
+
+<!-- Admin Section -->
+<section id="adminSection" class="admin-section" style="display:none">
+  <div class="container">
+    <div class="glass-card admin-panel">
+      <h2>Admin Panel</h2>
+      <div class="admin-login">
+        <input type="password" id="adminPassword" placeholder="Password">
+        <button id="adminLoginBtn" class="btn-primary">Login</button>
+      </div>
+      <div id="adminData" style="display:none">
+        <h3>All Appointments</h3>
+        <div id="adminAppointmentsList"></div>
+        <button id="clearAllData" class="btn-danger">Clear All Appointments</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Booking Modal -->
+<div id="bookingModal" class="modal">
+  <div class="modal-content glass-card">
+    <span class="modal-close">&times;</span>
+    <h3>Book Appointment</h3>
+    <form id="bookingForm">
+      <input type="hidden" id="bookDoctorId">
+      <div class="form-group"><label>Doctor</label><input type="text" id="bookDoctorName" readonly></div>
+      <div class="form-row"><input type="text" id="patientName" placeholder="Full Name" required><input type="number" id="patientAge" placeholder="Age" required></div>
+      <div class="form-row"><input type="tel" id="patientPhone" placeholder="Phone" required><input type="email" id="patientEmail" placeholder="Email" required></div>
+      <div class="form-row"><input type="date" id="appointmentDate" required><select id="appointmentTime" required><option value="">Select Time</option><option>09:00 AM</option><option>10:00 AM</option><option>11:00 AM</option><option>12:00 PM</option><option>02:00 PM</option><option>03:00 PM</option><option>04:00 PM</option></select></div>
+      <textarea id="symptoms" placeholder="Symptoms" rows="2"></textarea>
+      <button type="submit" class="btn-primary">Confirm Booking</button>
+    </form>
+  </div>
+</div>
+
+<!-- OTP Modal -->
+<div id="otpModal" class="modal">
+  <div class="modal-content glass-card">
+    <span class="modal-close">&times;</span>
+    <h3>Verify Mobile</h3>
+    <input type="text" id="otpInput" placeholder="Enter OTP">
+    <button id="verifyOtpBtn" class="btn-primary">Verify</button>
+    <p class="small">Demo OTP: 123456</p>
+  </div>
+</div>
+
+<!-- Payment Modal -->
+<div id="paymentModal" class="modal">
+  <div class="modal-content glass-card">
+    <span class="modal-close">&times;</span>
+    <h3>Payment Gateway</h3>
+    <form id="paymentForm">
+      <input type="text" placeholder="Card Number" value="4111 1111 1111 1111">
+      <input type="text" placeholder="Expiry (MM/YY)" value="12/28">
+      <input type="text" placeholder="CVV" value="123">
+      <button type="submit" class="btn-primary">Pay Now</button>
+    </form>
+  </div>
+</div>
+
+<!-- Floating Emergency Call Button -->
+<div class="floating-call">
+  <a href="tel:+919268880303" class="call-btn"><i class="fas fa-phone-alt"></i> <span>24/7 Emergency</span></a>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">FAQs</a>
+    </div>
+    <div class="footer-social">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="footer-copyright">
+      <p>© 2026 CareConnect – India's Most Trusted Healthcare Network</p>
+      <div class="live-clock"><i class="far fa-clock"></i> <span id="liveClock">--:--:--</span></div>
+    </div>
+  </div>
+</footer>
+
+<script src="/demos/hospital-appointment/script.js"></script>
+</body>
+</html>

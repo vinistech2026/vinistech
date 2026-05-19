@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Glass Cube Demo</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: white;
+    }
+    #info {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+      padding: 12px 24px;
+      border-radius: 40px;
+      z-index: 10;
+    }
+    a {
+      color: #00aaff;
+      text-decoration: none;
+    }
+    .placeholder {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(0,0,0,0.5);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div id="info">
+    <h2>✨ 3D Glass Cube</h2>
+    <p><a href="/demos/3d-cube/../demo.html">← Back to Demos</a></p>
+  </div>
+  <div class="placeholder">
+    ⚡ Interactive 3D cube would appear here.<br>
+    Add Three.js to make it fully functional.
+  </div>
+
+  <!-- You can later replace this with a real Three.js scene -->
+  <script>
+    console.log("3D Glass Cube demo ready. Replace with actual WebGL content.");
+  </script>
+</body>
+</html>
